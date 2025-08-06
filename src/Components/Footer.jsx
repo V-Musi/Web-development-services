@@ -1,6 +1,7 @@
 import React from 'react';
-import {FaFacebookF,FaTwitter,FaInstagram,FaLinkedinIn,FaEnvelope,FaPhoneAlt,FaMapMarkerAlt,} from 'react-icons/fa';
-import logo from '../assets/flaticon-removebg-preview.png'
+import {FaFacebookF,FaTwitter,FaInstagram,FaLinkedinIn,FaEnvelope,FaPhoneAlt,FaMapMarkerAlt, FaGoogle,} from 'react-icons/fa';
+import logo from '../assets/red.png'
+import { FaWebAwesome } from 'react-icons/fa6';
 const Footer = () => {
   return (
     <footer className="bg-black text-white">
@@ -29,7 +30,7 @@ const Footer = () => {
               <a href="/" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
                 <FaTwitter size={18} />
               </a>
-              <a href="/" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
+              <a href="https://instagram.com/codixy_media" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
                 <FaInstagram size={18} />
               </a>
               <a href="/" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
@@ -43,10 +44,9 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><a href="/" className="text-gray-300 hover:text-green-500 transition">Home</a></li>
-              <li><a href="About" className="text-gray-300 hover:text-green-500 transition">About Us</a></li>
-              <li><a href="/" className="text-gray-300 hover:text-green-500 transition">Services</a></li>
-              <li><a href="/" className="text-gray-300 hover:text-green-500 transition">Portfolio</a></li>
-              <li><a href="/" className="text-gray-300 hover:text-green-500 transition">Contact</a></li>
+              <li><a href="pricing" className="text-gray-300 hover:text-green-500 transition">Pricing</a></li>
+              <li><a href="portfolio" className="text-gray-300 hover:text-green-500 transition">Proje</a></li>
+              <li><a href="contact" className="text-gray-300 hover:text-green-500 transition">Contact</a></li>
             </ul>
           </div>
 
@@ -56,11 +56,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <FaEnvelope className="text-green-500 mr-3" />
+                <span className="text-gray-300">Codixymedia@gmail.com</span>
+              </div>
+              <div className="flex items-center">
+                <FaGoogle className="text-green-500 mr-3" />
                 <span className="text-gray-300">Codixymedia.com</span>
               </div>
               <div className="flex items-center">
                 <FaPhoneAlt className="text-green-500 mr-3" />
-                <span className="text-gray-300">0141-3212045</span>
+                <span className="text-gray-300">+91 7878343503</span>
               </div>
               <div className="flex items-center">
                 <FaMapMarkerAlt className="text-green-500 mr-3" />

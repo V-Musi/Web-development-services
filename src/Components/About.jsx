@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from '../assets/scattered-forcefields.png'; // Ensure this image exists in the correct path
 
 const About = () => {
   return (

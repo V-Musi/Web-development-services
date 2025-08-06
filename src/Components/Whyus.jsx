@@ -1,93 +1,79 @@
-import React from "react";
-import {
-  FaUsers,
-  FaSearch,
-  FaClock,
-  FaAward,
-  FaLaptopCode,
-  FaSmile,
-  FaCogs,
-  FaWallet,
-  FaProjectDiagram,
-} from "react-icons/fa";
+import React, { useEffect } from 'react';
+import 'remixicon/fonts/remixicon.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const reasons = [
-  {
-    title: "Expert Creative Team",
-    description:
-      "Our team of skilled designers, developers, and project managers work with precision and creativity to deliver standout websites tailored to your brand.",
-    icon: <FaUsers className="text-3xl text-blue-500 mb-4" />,
-  },
-  {
-    title: "SEO-Optimized Designs",
-    description:
-      "We build websites that not only look great but are optimized for search engines—ensuring your business ranks and gets noticed online.",
-    icon: <FaSearch className="text-3xl text-blue-500 mb-4" />,
-  },
-  {
-    title: "Timely Project Delivery",
-    description:
-      "Deadlines matter. Our team ensures every project is delivered on schedule without compromising quality or exceeding budget.",
-    icon: <FaClock className="text-3xl text-blue-500 mb-4" />,
-  },
-  {
-    title: "Over a Decade of Experience",
-    description:
-      "With 11+ years of industry knowledge, DevlumeDesign offers proven expertise in building trusted and result-driven digital experiences.",
-    icon: <FaAward className="text-3xl text-blue-500 mb-4" />,
-  },
-  {
-    title: "Cutting-Edge Technology",
-    description:
-      "We use the latest web technologies and tools to create high-performing, modern websites that are secure, scalable, and future-ready.",
-    icon: <FaLaptopCode className="text-3xl text-blue-500 mb-4" />,
-  },
-  {
-    title: "Customer-First Approach",
-    description:
-      "We prioritize your satisfaction by deeply understanding your goals and delivering solutions that exceed expectations.",
-    icon: <FaSmile className="text-3xl text-blue-500 mb-4" />,
-  },
-  {
-    title: "Customized Digital Solutions",
-    description:
-      "No cookie-cutter templates here—just personalized design and functionality tailored specifically to your business needs.",
-    icon: <FaCogs className="text-3xl text-blue-500 mb-4" />,
-  },
-  {
-    title: "Affordable & Flexible Pricing",
-    description:
-      "Startups and small businesses love us for our budget-friendly packages that provide premium value without breaking the bank.",
-    icon: <FaWallet className="text-3xl text-blue-500 mb-4" />,
-  },
-  {
-    title: "Strategic & Organized Planning",
-    description:
-      "We follow a structured and strategic design process from start to finish—ensuring smooth communication and predictable outcomes.",
-    icon: <FaProjectDiagram className="text-3xl text-blue-500 mb-4" />,
-  },
-];
+const WhyChooseUs = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
-const WhyUs = () => {
+  const features = [
+    "High-Performance Web & App Development",
+    "Expert UI/UX & Brand Design",
+    "Affordable & Transparent Pricing",
+    "24/7 Support & Maintenance",
+  ];
+
   return (
-    <section className="bg-gradient-to-r from-purple-200 to-blue-300 py-16 px-6 md:px-20 lg:px-32">
-      <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-        Why Choose DevlumeDesign?
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {reasons.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white border border-gray-200 rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:border-blue-500 hover:text-blue-600"
-          >
-            {item.icon}
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <p className="text-gray-600">{item.description}</p>
+    <section className="relative w-full overflow-hidden py-10 px-6 sm:px-12 md:px-20 text-white">
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="/assets/services-background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-white z-0"></div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 text-black">
+        {/* Left Text */}
+        <div className="md:w-1/2" data-aos="fade-right">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+            Why Codixy Media..?
+          </h2>
+          <p className="text-lg mb-4 text-black">
+            We deliver modern digital solutions tailored to your business. From concept to launch, our team ensures a seamless, innovative experience that drives results.
+          </p>
+          <ul className="space-y-3 text-base">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-center" data-aos="fade-up" data-aos-delay={index * 150}>
+                <i className="ri-checkbox-circle-line text-green-400 mr-2 text-lg" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Right Video */}
+        <div className="md:w-1/2 flex items-center justify-center relative" data-aos="fade-left">
+          <div className="relative w-full max-w-2xl rounded-3xl overflow-hidden">
+            {/* Blurred glowing shadow */}
+            <div className="absolute -inset-4 bg-indigo-500/20 blur-3xl rounded-3xl z-0"></div>
+
+            {/* Main Video */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="relative z-10 w-full h-[420px] object-cover rounded-2xl shadow-2xl"
+            >
+              <source src="/Animatedright.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default WhyUs;
+export default WhyChooseUs;

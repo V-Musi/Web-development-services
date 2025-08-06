@@ -1,12 +1,15 @@
 import React from "react";
-import PreloaderImg from '../assets/preloader.gif'
+import PreloaderVideo from "../assets/preloader.mp4";
+
 const Preloader = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-300">
-      <img
-        src={PreloaderImg}
-        alt="Loading..."
+      <video
+        src={PreloaderVideo}
         className="w-36 h-36"
+        autoPlay
+        loop
+        muted
       />
     </div>
   );
